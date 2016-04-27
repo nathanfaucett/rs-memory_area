@@ -8,8 +8,21 @@ pub struct MemoryArea {
     typ: u32,
     reserved: u32,
 }
-
 impl MemoryArea {
+    pub fn new(
+        base_address: u64,
+        length: u64,
+        typ: u32,
+        reserved: u32
+    ) -> Self {
+        MemoryArea {
+            base_address: base_address,
+            length: length,
+            typ: typ,
+            reserved: reserved,
+        }
+    }
+
     pub fn get_base_address(&self) -> u64 { self.base_address }
     pub fn get_length(&self) -> u64 { self.length }
     pub fn get_type(&self) -> u32 { self.typ }
@@ -21,6 +34,19 @@ pub struct MemoryAreaIter {
     current_area: *const MemoryArea,
     last_area: *const MemoryArea,
     entry_size: u32,
+}
+impl MemoryAreaIter {
+    pub fn new(
+        current_area: *const MemoryArea,
+        last_area: *const MemoryArea,
+        entry_size: u32,
+    ) -> Self {
+        MemoryAreaIter {
+            current_area: current_area,
+            last_area: last_area,
+            entry_size: entry_size,
+        }
+    }
 }
 
 impl Iterator for MemoryAreaIter {
