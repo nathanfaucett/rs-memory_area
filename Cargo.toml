@@ -1,11 +1,11 @@
 [package]
-name = "memory_map"
+name = "memory_area"
 version = "0.1.0"
 authors = ["nathanfaucett <nathanfaucett@gmail.com>"]
 
-keywords = ["map", "memory", "tag", "areas"]
-description = "memory map tag and areas helpers"
+keywords = ["memory", "areas"]
+description = "memory area"
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/nathanfaucett/rs-memory_map.git"
-homepage = "https://github.com/nathanfaucett/rs-memory_map"
+repository = "https://github.com/nathanfaucett/rs-memory_area.git"
+homepage = "https://github.com/nathanfaucett/rs-memory_area"

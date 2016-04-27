@@ -1,4 +1,4 @@
-memory_map [![Build Status](https://travis-ci.org/nathanfaucett/rs-memory_map.svg?branch=master)](https://travis-ci.org/nathanfaucett/rs-memory_map)
+memory_area [![Build Status](https://travis-ci.org/nathanfaucett/rs-memory_area.svg?branch=master)](https://travis-ci.org/nathanfaucett/rs-memory_area)
 =====
 
-memory map tag and areas helpers
+memory area
