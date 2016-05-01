@@ -3,15 +3,15 @@
 
 #[repr(C)]
 pub struct MemoryArea {
-    base_address: u64,
-    length: u64,
+    base_address: usize,
+    length: usize,
     typ: u32,
     reserved: u32,
 }
 impl MemoryArea {
     pub fn new(
-        base_address: u64,
-        length: u64,
+        base_address: usize,
+        length: usize,
         typ: u32,
         reserved: u32
     ) -> Self {
@@ -23,8 +23,8 @@ impl MemoryArea {
         }
     }
 
-    pub fn get_base_address(&self) -> u64 { self.base_address }
-    pub fn get_length(&self) -> u64 { self.length }
+    pub fn get_base_address(&self) -> usize { self.base_address }
+    pub fn get_length(&self) -> usize { self.length }
     pub fn get_type(&self) -> u32 { self.typ }
     pub fn get_reserved(&self) -> u32 { self.reserved }
 }
