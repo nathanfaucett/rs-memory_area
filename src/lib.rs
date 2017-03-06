@@ -1,9 +1,12 @@
 #![no_std]
 
 
-mod memory_area_iter;
-mod memory_area;
+pub mod x86;
+pub mod x86_64;
 
 
-pub use memory_area_iter::MemoryAreaIter;
-pub use memory_area::MemoryArea;
+#[cfg(target_arch = "x86")]
+pub use x86::*;
+
+#[cfg(target_arch = "x86_64")]
+pub use x86_64::*;

@@ -1,4 +1,4 @@
-use memory_area::MemoryArea;
+use super::memory_area::MemoryArea;
 
 
 #[derive(Clone)]
@@ -8,6 +8,7 @@ pub struct MemoryAreaIter {
     entry_size: u32,
 }
 impl MemoryAreaIter {
+    #[inline(always)]
     pub fn new(
         current_area: *const MemoryArea,
         last_area: *const MemoryArea,
@@ -24,6 +25,7 @@ impl MemoryAreaIter {
 impl Iterator for MemoryAreaIter {
     type Item = &'static MemoryArea;
 
+    #[inline]
     fn next(&mut self) -> Option<&'static MemoryArea> {
         if self.current_area > self.last_area {
             None
@@ -34,7 +36,7 @@ impl Iterator for MemoryAreaIter {
 
             self.current_area = ((self.current_area as u32) + self.entry_size) as *const MemoryArea;
 
-            if area.get_type() == 1 {
+            if area.kind() == 1 {
                 Some(area)
             } else {
                 self.next()
